@@ -20,12 +20,11 @@ def generate_username(adjectives, nouns, use_numbers, use_special_chars, usernam
     return username
 
 def save_usernames_to_file(usernames, filename="usernames.txt"):
-    # Check if the specified directory exists; if not, create it
     directory = os.path.dirname(filename)
     if directory and not os.path.exists(directory):
         os.makedirs(directory)
 
-    with open(filename, "w", encoding="utf-8") as file:  # Use utf-8 encoding
+    with open(filename, "w", encoding="utf-8") as file:  
         for username in usernames:
             file.write(username + "\n")
 
